@@ -1,0 +1,22 @@
+{
+  "groups": [
+    {
+      "name": "rpc.server.config.nacos",
+      "type": "com.musekeeper.rpc.core.server.registry.Impl.nacos.config.NacosRegistryConfig",
+      "sourceType": "com.musekeeper.rpc.core.server.registry.config.ServerConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "rpc.server.config.nacos.name-space-id",
+      "type": "java.lang.String"
+
+    },
+    {
+      "name": "rpc.server.config.nacos.server-addr",
+      "type": "java.lang.String",
+      "defaultValue": "localhost:8848"
+    }
+  ],
+  "hints": []
+}

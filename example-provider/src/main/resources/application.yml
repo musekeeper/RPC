@@ -1,0 +1,24 @@
+server:
+  port: 9091
+spring:
+  application:
+    name: RpcProvider
+rpc:
+  server:
+    registry: NACOS
+    config:
+      port: 9966
+      host: localhost
+      name: RpcProvider
+      nacos:
+        server-addr: localhost:8848
+        name-space-id: 906c8dfb-09a6-418c-8800-a89552c24252
+
+
+
+
+
+
+
+
+

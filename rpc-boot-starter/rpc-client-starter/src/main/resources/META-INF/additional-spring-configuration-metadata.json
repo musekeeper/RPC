@@ -1,0 +1,42 @@
+{
+  "groups": [
+    {
+      "name": "rpc.client.config.registry",
+      "type": "com.musekeeper.rpc.core.client.registry.config.RegistryConfig",
+      "sourceType": "com.musekeeper.rpc.core.client.config.RpcClientConfig"
+    },
+    {
+      "name": "rpc.client.config.registry.nacos",
+      "type": "com.musekeeper.rpc.core.client.registry.impl.nacos.config.NacosConfig",
+      "sourceType": "com.musekeeper.rpc.core.client.registry.config.RegistryConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "rpc.client.config.registry.name",
+      "type": "java.lang.String",
+      "sourceType": "com.musekeeper.rpc.core.client.registry.config.RegistryConfig",
+      "description":  "注册中心名称."
+    },
+    {
+      "name": "rpc.client.config.registry.registry",
+      "type": "java.lang.Enum",
+      "sourceType": "com.musekeeper.rpc.core.client.registry.config.RegistryConfig",
+      "description":  "注册中心类型."
+    },
+    {
+      "name": "rpc.client.config.registry.nacos.server-addr",
+      "type": "java.lang.String",
+      "sourceType": "com.musekeeper.rpc.core.client.registry.impl.nacos.config.NacosConfig",
+      "description":  "Nacos注册中心地址,示例:”127.0.0.1:8848,127.0.0.1:8849“."
+    },
+    {
+      "name": "rpc.client.config.registry.nacos.name-space-id",
+      "type": "java.lang.String",
+      "sourceType": "com.musekeeper.rpc.core.client.registry.impl.nacos.config.NacosConfig",
+      "description":  "Nacos注册中心命名空间ID."
+    }
+
+  ],
+  "hints": []
+}

@@ -1,0 +1,31 @@
+server:
+  port: 9090
+
+spring:
+  application:
+    name: RpcConsumer
+
+rpc:
+  client:
+    config:
+      serialization: PROTOBUF
+      load-balance: WEIGHT_RANDOM
+      retry-strategy: NO_RETRY
+      tolerant-strategy: FAIL_SAFE
+      registry:
+        name: RpcProvider
+        registry: NACOS
+        nacos:
+          server-addr: localhost:8848
+          name-space-id: 906c8dfb-09a6-418c-8800-a89552c24252
+
+
+
+
+
+
+
+
+
+
+
