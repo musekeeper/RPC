@@ -1,7 +1,7 @@
 package com.musekeeper.rpc.core.client;
 
 import com.musekeeper.rpc.core.client.protocol.http3.connection.QuicStreamConnection;
-import com.musekeeper.rpc.core.client.protocol.http3.connection.factory.QuicStreamConnectionFactory;
+
 import com.musekeeper.rpc.core.client.protocol.http3.handler.Http3ClientHandler;
 
 import com.musekeeper.rpc.core.common.enums.serialization.SerializationEnum;
@@ -30,7 +30,7 @@ public class RpcClient {
      */
     public static byte[] send(byte[] msg, InetSocketAddress ServerAddress, SerializationEnum serializationEnum) {
 
-            QuicStreamConnection quicStreamConnection = QuicStreamConnectionFactory.createChannel(ServerAddress);
+        try (QuicStreamConnection quicStreamConnection = QuicStreamConnection.getConnection(ServerAddress)){
             // 获取QuicStreamChannel
             QuicStreamChannel streamChannel = quicStreamConnection.getQuicStreamChannel();
             // 获取QuicChannel
@@ -39,7 +39,7 @@ public class RpcClient {
             Http3ClientHandler http3ClientHandler = quicStreamConnection.getHttp3ClientHandler();
             // 设置请求头
             Http3HeadersFrame headersFrame = new DefaultHttp3HeadersFrame();
-        try {
+
             // 设置请求头
             headersFrame.headers().method("GET")
                     .path("/")
@@ -63,9 +63,6 @@ public class RpcClient {
 
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
-        }finally {
-            //关闭连接
-            quicStreamConnection.close();
         }
 
     }
