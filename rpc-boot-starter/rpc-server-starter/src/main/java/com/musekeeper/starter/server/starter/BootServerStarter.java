@@ -11,6 +11,7 @@ import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.ApplicationContext;
 
 import java.util.Map;
@@ -20,6 +21,7 @@ import java.util.Map;
  * bootstrap启动类
  */
 @Slf4j
+@EnableConfigurationProperties(ServerConfigProperties.class)
 public class BootServerStarter implements CommandLineRunner {
 
     private RpcServerStarter rpcServerStarter;

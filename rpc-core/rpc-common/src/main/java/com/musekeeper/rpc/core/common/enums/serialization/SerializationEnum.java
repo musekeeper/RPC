@@ -7,6 +7,5 @@ public enum SerializationEnum {
     JSON ,
     KRYO ,
     PROTOBUF,
-
     HESSIAN
 }

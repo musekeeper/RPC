@@ -8,6 +8,7 @@ import com.musekeeper.starter.client.config.RpcClientConfigProperties;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.aop.support.AopUtils;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.ApplicationContext;
 
 import java.lang.reflect.Field;
@@ -19,6 +20,7 @@ import java.util.Objects;
  * 启动时获取代理
  */
 @Log4j2
+@EnableConfigurationProperties(RpcClientConfigProperties.class)
 public class BootAutoProxy implements CommandLineRunner {
     /**
      * rpc客户端配置

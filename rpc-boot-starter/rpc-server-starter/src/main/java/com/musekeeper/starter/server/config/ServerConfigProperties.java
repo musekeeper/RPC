@@ -2,7 +2,6 @@ package com.musekeeper.starter.server.config;
 
 
 import com.musekeeper.rpc.core.common.enums.registry.RegistryEnum;
-import com.musekeeper.rpc.core.server.registry.Impl.nacos.config.NacosRegistryConfig;
 import com.musekeeper.rpc.core.server.registry.config.ServerConfig;
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -15,10 +14,6 @@ import org.springframework.boot.context.properties.NestedConfigurationProperty;
 @Data
 @ConfigurationProperties("rpc.server")
 public class ServerConfigProperties {
-//    /**
-//     * 是否启用rpc服务
-//     */
-//    private boolean Enable = false;
     /**
      * 注册中心类型
      */

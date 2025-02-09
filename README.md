@@ -64,10 +64,10 @@ rpc:
 <br>
 5. <font size=4>**注册中心配置 (registry)**</font>  
    
-    | 配置项      |值|说明
-    |----------|---|---|
-    | name     |RpcProvider|服务提供者注册名称|
-    | registry |NACOS|使用 Nacos 注册中心| 
+    | 配置项      | 值           | 说明            |
+       |----------|-------------|---------------|
+    | name     | RpcProvider | 服务提供者注册名称     |
+    | registry | NACOS       | 使用 Nacos 注册中心 | 
 # RPC 服务端配置说明
 
 ## 核心配置项

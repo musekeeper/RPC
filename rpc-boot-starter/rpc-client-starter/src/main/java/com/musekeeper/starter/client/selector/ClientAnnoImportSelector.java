@@ -6,6 +6,7 @@ import com.musekeeper.starter.client.anno.EnableRpcClient;
 import org.springframework.context.annotation.ImportSelector;
 import org.springframework.core.annotation.AnnotationAttributes;
 import org.springframework.core.type.AnnotationMetadata;
+import org.springframework.lang.NonNull;
 
 
 import java.util.function.Predicate;
@@ -16,13 +17,13 @@ import java.util.function.Predicate;
  */
 public class ClientAnnoImportSelector implements ImportSelector {
     @Override
-
+    @NonNull
     public String[] selectImports(AnnotationMetadata importingClassMetadata) {
         AnnotationAttributes annotationAttributes = AnnotationAttributes.fromMap(importingClassMetadata.getAnnotationAttributes(EnableRpcClient.class.getName()));
 
         if (annotationAttributes != null && annotationAttributes.getBoolean("enable")) {
             // 自动配置
-            return new String[]{BootAutoProxy.class.getName(), RpcClientConfigProperties.class.getName()};
+            return new String[]{BootAutoProxy.class.getName()};
         }
         return new String[0];
     }
